@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maker's corner — free 3D printables and booklets by Karina Sokolova</title>
+<meta name="description" content="Free 3D-printable bookmarks and maker's booklets on how I build my 3D printing tools with Claude. By Karina Sokolova, tech professor in Paris.">
+<meta name="keywords" content="3D printing, free printables, bookmark 3D print, MakerWorld, maker's booklet, G-code, 3D printing with Claude, Karina Sokolova, fabric-like 3D print, handwriting 3D print">
+<meta name="author" content="Karina Sokolova">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Maker's corner">
+<meta property="og:title" content="Maker's corner — free printables and booklets">
+<meta property="og:description" content="Free 3D-printable bookmarks and maker's booklets on building 3D printing tools with Claude. By Karina Sokolova.">
+<meta property="og:image" content="images/handwritten-1.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fbfaf6; --ink:#2a2d34; --ink-soft:#5d6470;
+    --accent:#2c5f8a; --accent-deep:#214a6d; --accent-wash:#e9f1f8;
+    --line:#e5e3dc; --card:#ffffff; --ok:#2f7d4f;
+    --warm:#c95a30; --warm-deep:#a8461f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+  a{color:var(--accent)}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:20;background:rgba(251,250,246,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1000px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem;color:var(--ink);text-decoration:none}
+  .nav-links{display:flex;gap:18px;flex-wrap:wrap}
+  .nav-links a{font-size:.88rem;font-weight:500;color:var(--ink-soft);text-decoration:none}
+  .nav-links a:hover{color:var(--accent)}
+  .nav-links a.nav-cta{background:var(--accent);color:#fff;border-radius:999px;padding:6px 14px}
+  .nav-links a.nav-cta:hover{background:var(--accent-deep);color:#fff}
+
+  /* hero / about */
+  header{padding:56px 0 36px}
+  .eyebrow{font-weight:500;font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.05;letter-spacing:-.01em;margin-bottom:18px}
+  .lead{font-size:1.08rem;color:var(--ink-soft);max-width:62ch}
+  .lead strong{color:var(--ink);font-weight:500}
+  .hero-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+  .pill{display:inline-flex;align-items:center;gap:7px;font-size:.9rem;font-weight:500;color:var(--accent);text-decoration:none;border:1.5px solid var(--accent);border-radius:999px;padding:9px 18px;transition:background .18s ease,color .18s ease}
+  .pill:hover{background:var(--accent);color:#fff}
+  .pill.solid{background:var(--accent);color:#fff}
+  .pill.solid:hover{background:var(--accent-deep)}
+
+  /* sections */
+  section{padding:40px 0}
+  .sec-head{margin-bottom:22px}
+  .sec-head h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.6rem,3.4vw,2.2rem);line-height:1.1}
+  .sec-head p{color:var(--ink-soft);margin-top:6px;max-width:62ch}
+  .tag{display:inline-block;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--accent-wash);color:var(--accent)}
+  .tag.free{background:#e6f4ea;color:var(--ok)}
+  .tag.soon{background:#fdf1dc;color:#8a5a12}
+
+  /* cards */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 50px -40px rgba(42,45,52,.35)}
+  .card-media{aspect-ratio:4/3;overflow:hidden;background:var(--accent-wash)}
+  .card-media img{width:100%;height:100%;object-fit:cover;display:block}
+  .card-body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+  .card-body h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;margin:8px 0 8px}
+  .card-body p{color:var(--ink-soft);font-size:.96rem;margin-bottom:12px}
+  .specs{list-style:none;display:flex;flex-direction:column;gap:5px;margin:4px 0 16px;font-size:.9rem;color:var(--ink)}
+  .specs li{display:flex;gap:9px;align-items:flex-start}
+  .specs li::before{content:"";flex:none;width:6px;height:6px;margin-top:9px;border-radius:50%;background:var(--accent)}
+  .card .pill{margin-top:auto;align-self:flex-start}
+
+  /* printables gallery: compact, grows with many models */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
+  .model{display:block;text-decoration:none;color:var(--ink)}
+  .model-img{position:relative;aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:var(--accent-wash);border:1px solid var(--line)}
+  .model-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+  .model:hover .model-img img{transform:scale(1.04)}
+  .model-img .tag{position:absolute;left:10px;top:10px}
+  .model h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.02rem;line-height:1.25;margin:10px 2px 2px}
+  .model p{font-size:.84rem;color:var(--ink-soft);margin:0 2px}
+  .model:hover h3{color:var(--accent)}
+  .tag.new{background:var(--accent);color:#fff}
+  .model p.go{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  .model:hover p.go{color:var(--accent-deep);text-decoration-thickness:2px}
+  @media(max-width:520px){.gallery{grid-template-columns:1fr 1fr;gap:12px}.model h3{font-size:.95rem}}
+
+  /* booklet */
+  .booklet{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 24px 50px -40px rgba(42,45,52,.35)}
+  .booklet-media{aspect-ratio:3/4;background:var(--accent-wash)}
+  .booklet-media img{width:100%;height:100%;object-fit:cover;display:block}
+  .booklet-body{padding:26px 28px 26px 0}
+  .booklet-body h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.35rem;margin:8px 0 8px}
+  .booklet-body p{color:var(--ink-soft);font-size:.97rem;margin-bottom:12px}
+  .price{font-family:'Fraunces',serif;font-weight:600;font-size:1.6rem;color:var(--ink);margin:8px 0 14px}
+
+  /* commercial licence highlight */
+  .lic{display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center;background:var(--ink);color:#fff;border-radius:18px;padding:30px 32px;box-shadow:0 24px 50px -36px rgba(42,45,52,.6)}
+  .lic .tag{background:rgba(255,255,255,.14);color:#fff}
+  .lic h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.5rem,3vw,2rem);line-height:1.15;margin:10px 0 8px}
+  .lic p{color:rgba(255,255,255,.78);max-width:56ch}
+  .lic-side{display:flex;flex-direction:column;gap:12px;align-items:stretch;text-align:center}
+  .lic-price{font-family:'Fraunces',serif;font-size:2rem;font-weight:600;line-height:1}
+  .lic-price span{font-family:'Outfit',sans-serif;font-size:.9rem;font-weight:400;color:rgba(255,255,255,.7)}
+  .lic .pill{justify-content:center;background:#fff;color:var(--ink);border-color:#fff}
+  .lic .pill:hover{background:var(--accent-wash);color:var(--ink)}
+  @media(max-width:760px){.lic{grid-template-columns:1fr}}
+
+  /* tools form */
+  .tools-card{background:var(--card);border:1px dashed var(--accent);border-radius:18px;padding:28px 30px}
+  .tools-card p{color:var(--ink-soft);max-width:62ch;margin-bottom:18px}
+  form{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:720px}
+  label{display:flex;flex-direction:column;gap:6px;font-size:.84rem;font-weight:500;color:var(--ink)}
+  label.full{grid-column:1/-1}
+  input,select,textarea{font:inherit;font-weight:300;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+  textarea{min-height:88px;resize:vertical}
+  .form-foot{grid-column:1/-1;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  button{font:inherit;font-weight:600;background:var(--accent);color:#fff;border:0;border-radius:999px;padding:12px 26px;cursor:pointer;transition:background .18s ease,transform .18s ease}
+  button:hover{background:var(--accent-deep);transform:translateY(-1px)}
+  .hint{font-size:.8rem;color:var(--ink-soft)}
+  .thanks{display:none;background:#e6f4ea;color:var(--ok);border-radius:12px;padding:14px 18px;font-weight:500}
+  .hp{position:absolute;left:-9999px}
+
+  /* newsletter */
+  .news{background:var(--accent-wash);border-radius:18px;padding:30px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .news h2{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;margin-bottom:4px}
+  .news p{color:var(--ink-soft);max-width:48ch}
+
+  .news-eyebrow{display:inline-block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--warm);margin-bottom:6px}
+  .news h2{font-size:clamp(1.5rem,3vw,2rem)}
+  .news-list{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:6px;color:var(--ink)}
+  .news-list li{display:flex;gap:10px;align-items:flex-start}
+  .news-list li::before{content:"✓";color:var(--warm);font-weight:600}
+  .news-cta{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .pill.warm{background:var(--warm);border-color:var(--warm);color:#fff;font-size:1.02rem;padding:14px 28px;box-shadow:0 12px 26px -12px rgba(201,90,48,.6)}
+  .pill.warm:hover{background:var(--warm-deep);border-color:var(--warm-deep);color:#fff;transform:translateY(-1px)}
+  .news-note{font-size:.78rem;color:var(--ink-soft)}
+  footer{text-align:center;padding:40px 0 56px;margin-top:20px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:.86rem}
+  footer a{text-decoration:none}
+  footer a:hover{text-decoration:underline}
+
+  @media(max-width:760px){
+    .grid,form{grid-template-columns:1fr}
+    .booklet{grid-template-columns:1fr}
+    .booklet-body{padding:0 24px 24px}
+    .booklet-media{aspect-ratio:4/3}
+    .nav-links{display:none}
+    header{padding:40px 0 28px}
+  }
+  /* snapmaker referral */
+  .ref{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 30px;box-shadow:0 24px 50px -40px rgba(42,45,52,.35)}
+  .ref h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.35rem;margin:8px 0 8px}
+  .ref p{color:var(--ink-soft);font-size:.97rem;margin-bottom:10px}
+  .ref-actions{display:flex;flex-direction:column;gap:12px;align-items:stretch}
+  .ref-actions .pill{justify-content:center}
+  .code-box{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1.5px dashed var(--accent);border-radius:12px;padding:10px 12px 10px 16px;background:var(--accent-wash)}
+  .code-box .lbl{display:block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+  .code-box code{font-family:ui-monospace,Menlo,monospace;font-size:1.15rem;font-weight:600;color:var(--ink)}
+  .copy-btn{font:inherit;font-size:.82rem;font-weight:600;background:#fff;color:var(--accent);border:1.5px solid var(--accent);border-radius:999px;padding:7px 14px;cursor:pointer}
+  .copy-btn:hover{background:var(--accent);color:#fff;transform:none}
+  .disclose{font-size:.78rem;color:var(--ink-soft);margin-top:4px}
+  @media(max-width:760px){.ref{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="#top">Maker's corner</a>
+    <div class="nav-links">
+      <a href="#printables">Free printables</a>
+      <a href="#snapmaker">Snapmaker −5%</a>
+      <a href="#booklets">Booklets</a>
+      <a href="license.html">Commercial licence</a>
+      <a class="nav-cta" href="https://substack.com/@karinasokolova" target="_blank" rel="noopener">Newsletter</a>
+      <a href="https://memento-club.netlify.app/" target="_blank" rel="noopener">Mail club ↗</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <p class="eyebrow">Karina Sokolova</p>
+    <h1>Maker's corner</h1>
+    <p class="lead"><strong>I'm Karina, a tech professor at a business school in Paris.</strong> I explore what 3D printing can do beyond solid objects: fabric-like pieces, handwriting, delicate patterns. I build my own design tools with Claude and write custom G-code to get there. This page gathers what I share with other makers: free printables and booklets on how the tools are made.</p>
+    <div class="hero-links">
+      <a class="pill solid" href="https://substack.com/@karinasokolova" target="_blank" rel="noopener">Subscribe to the newsletter</a>
+      <a class="pill" href="https://www.instagram.com/karina_pika/" target="_blank" rel="noopener">Instagram</a>
+      <a class="pill" href="https://memento-club.netlify.app/" target="_blank" rel="noopener">The Memento Mail Club</a>
+    </div>
+  </div>
+</header>
+
+<section id="licence" style="padding-top:8px">
+  <div class="wrap">
+    <div class="lic">
+      <div>
+        <span class="tag">For small shops &amp; makers</span>
+        <h2>Sell prints of my designs</h2>
+        <p>The commercial licence lets independent makers and small businesses sell physical 3D prints of my designs, online or at craft fairs, for as long as the membership is active.</p>
+      </div>
+      <div class="lic-side">
+        <div class="lic-price">€10 <span>/ month</span></div>
+        <a class="pill" href="license.html">See the commercial licence</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="printables">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Free printables</h2>
+      <p>Ready-to-slice files with the print profiles already set up. Pick your colours and print. Click a model to get it on MakerWorld. Personal use only; to sell prints, see the <a href="license.html">commercial licence</a>.</p>
+    </div>
+    <div class="gallery">
+<!-- models:start (newest first; Maker Studio adds new models here) -->
+      <a class="model" href="https://makerworld.com/fr/models/3640422-bubble-frame-for-aceo-cards#profileId-4175500" target="_blank" rel="noopener">
+        <div class="model-img"><img src="images/bubble-frame-for-aceo-cards-3640422.jpg" alt="Bubble frame for ACEO cards, 3D printed" loading="lazy"><span class="tag new">New</span></div>
+        <h3>Bubble frame for ACEO cards</h3>
+        <p class="go">Give your favourite little cards a bubbly home&nbsp;→</p>
+      </a>
+      <a class="model" href="https://makerworld.com/en/models/3625933-knitted-bookmarks-foxes-and-nordic-snowflakes" target="_blank" rel="noopener">
+        <div class="model-img"><img src="images/knitted-1.jpg" alt="Two knitted-look 3D printed bookmarks, little foxes and Nordic snowflakes, in an open book" loading="lazy"></div>
+        <h3>Knitted bookmarks: foxes and Nordic snowflakes</h3>
+        <p class="go">Wrap your book in a cosy sweater&nbsp;→</p>
+      </a>
+      <a class="model" href="https://makerworld.com/en/models/3419379-cross-stitch-style-autumn-bookmark" target="_blank" rel="noopener">
+        <div class="model-img"><img src="images/autumn-cross-stitch-1.jpg" alt="Two cross-stitch style 3D printed bookmarks with pumpkins and sunflowers in an open book" loading="lazy"></div>
+        <h3>Cross-stitch style autumn bookmark</h3>
+        <p class="go">Bring pumpkin season to every chapter&nbsp;→</p>
+      </a>
+      <a class="model" href="https://makerworld.com/en/models/3415230-cross-stitch-fox-bookmark-autumn" target="_blank" rel="noopener">
+        <div class="model-img"><img src="images/fox-cross-stitch-1.jpg" alt="Two cross-stitch 3D printed fox bookmarks, a sleeping fox and a fox looking forward, in an open book" loading="lazy"></div>
+        <h3>Cross-stitch fox bookmark, autumn</h3>
+        <p class="go">Let a sleepy fox keep your page&nbsp;→</p>
+      </a>
+      <a class="model" href="https://makerworld.com/en/models/3300981-summer-shapes-bookmarks-and-earings" target="_blank" rel="noopener">
+        <div class="model-img"><img src="images/summer-1.jpg" alt="Summer shapes bookmarks and earrings, yellow shell, sunglasses and mini prints" loading="lazy"></div>
+        <h3>Summer shapes bookmarks and earrings</h3>
+        <p class="go">Keep summer going all year&nbsp;→</p>
+      </a>
+      <a class="model" href="https://makerworld.com/en/models/3278883-handwritten-bookmarks-for-book-lovers" target="_blank" rel="noopener">
+        <div class="model-img"><img src="images/handwritten-1.jpg" alt="Handwritten bookmarks for book lovers, 3D printed in three colours on a ruled-paper base" loading="lazy"></div>
+        <h3>Handwritten bookmarks for book lovers</h3>
+        <p class="go">Leave a little message in every book&nbsp;→</p>
+      </a>
+<!-- models:end -->
+    </div>
+    <p class="hint" style="margin-top:18px">All my models: <a href="https://makerworld.com/en/collections/34885885-custom-bookmarks" target="_blank" rel="noopener">the Custom bookmarks collection on MakerWorld</a>. If you like one, a boost helps me make more.</p>
+  </div>
+</section>
+
+<section id="snapmaker">
+  <div class="wrap">
+    <div class="ref">
+      <div>
+        <span class="tag">My printer</span>
+        <h3>Get 5% off your Snapmaker</h3>
+        <p>Most of my designs, and the tools behind them, are made on a Snapmaker U1. If you're thinking of getting one, use my link or my code at checkout for 5% off.</p>
+        <p class="disclose">Affiliate link: I earn a small commission on orders, at no extra cost to you. It helps me keep sharing free designs.</p>
+      </div>
+      <div class="ref-actions">
+        <a class="pill solid" href="https://snapmaker-eu.myshopify.com?ref=karina_sokolova" target="_blank" rel="noopener sponsored">Shop Snapmaker with 5% off</a>
+        <div class="code-box">
+          <div><span class="lbl">Code at checkout</span><code id="refCode">karina_pika</code></div>
+          <button type="button" class="copy-btn" id="copyCode">Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="booklets">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Maker's booklets</h2>
+      <p>The behind-the-scenes of one design at a time: the idea, how I work with Claude, the tool I built, and the print settings. Method, not files, so you can apply it to your own work.</p>
+    </div>
+    <div class="booklet">
+      <div class="booklet-media"><img src="images/booklet-1.jpg" alt="Maker's booklet #1 cover: Notebook doodles, 3D printing with Claude" loading="lazy"></div>
+      <div class="booklet-body">
+        <span class="tag">Booklet #1 · PDF</span>
+        <h3>Notebook doodles: handwriting and doodles</h3>
+        <p>How the "Kid's notebook" design was made, from the first idea to the finished piece. Inside: where the idea came from, how I work with Claude (practical advice and the real prompts I used), the web tool that generates the design, how the handwriting and doodling are implemented, how the background is built, printer settings and filaments, and scans of the finished pieces.</p>
+        <p>Useful whether you print your own work or just want to see what building with an AI assistant looks like on a real project. Digital PDF, designed for screen. No ready-made print files included.</p>
+        <div class="price">€4.00</div>
+        <a class="pill solid" href="https://payhip.com/b/IWO5d" target="_blank" rel="noopener">Get the booklet on Payhip</a>
+        <p class="hint" style="margin-top:14px">More booklets in this series are coming, each on a different project and technique. Requests welcome on Instagram.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="newsletter">
+  <div class="wrap">
+    <div class="news">
+      <div class="news-text">
+        <span class="news-eyebrow">The newsletter</span>
+        <h2>Never miss a new design</h2>
+        <p>Every bookmark starts with an idea, a tool I build with Claude and a few failed prints. I share the whole story, and you hear first when a new free printable or booklet is out.</p>
+        <ul class="news-list">
+          <li>New free printables as soon as they're out</li>
+          <li>How each design is made, step by step</li>
+          <li>What I learn from every print, good or bad</li>
+        </ul>
+      </div>
+      <div class="news-cta">
+        <a class="pill warm" href="https://substack.com/@karinasokolova" target="_blank" rel="noopener">Join the newsletter&nbsp;→</a>
+        <span class="news-note">Free on Substack · unsubscribe anytime</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Maker's corner by Karina Sokolova · <a href="https://www.instagram.com/karina_pika/" target="_blank" rel="noopener">Instagram</a> · <a href="https://substack.com/@karinasokolova" target="_blank" rel="noopener">Newsletter</a> · <a href="https://makerworld.com/en/@karina_pika" target="_blank" rel="noopener">MakerWorld</a> · <a href="license.html">Commercial licence</a> · <a href="https://payhip.com/karinas3Dprints" target="_blank" rel="noopener">Payhip</a> · <a href="https://snapmaker-eu.myshopify.com?ref=karina_sokolova" target="_blank" rel="noopener sponsored">Snapmaker (−5%)</a> · <a href="https://memento-club.netlify.app/" target="_blank" rel="noopener">The Memento Mail Club</a></p>
+  </div>
+</footer>
+
+<script>
+  var cb=document.getElementById('copyCode');
+  if(cb){ cb.addEventListener('click', function(){
+    var txt=document.getElementById('refCode').textContent;
+    (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(function(){
+      cb.textContent='Copied!'; setTimeout(function(){ cb.textContent='Copy'; },1600);
+    }).catch(function(){ cb.textContent=txt; });
+  }); }
+</script>
+
+</body>
+</html>
